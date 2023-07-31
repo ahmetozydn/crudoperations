@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // restfull API
+/*@RestController // restfull API
 public class CustomErrorController implements ErrorController {
     @RequestMapping("/error")
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -23,5 +23,5 @@ public class CustomErrorController implements ErrorController {
     public String get() {
         return "prtdfg";
     }
-}
+}*/
 

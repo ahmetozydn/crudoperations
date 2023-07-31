@@ -5,27 +5,28 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "city")
 public class City {
-
-    @Id
-    @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "name")
-    private String name; // mobile applications, Angular, swing can be categorized as UI layer
-    @Column(name = "countyCode")
-    private String countryCode;
-    @Column(name = "district")
-    private String district;
-    @Column(name = "population")
-    private String population;
-
-    public City(int id, String name, String countryCode, String district, String population) {
+    public City(){  } // default const. for Hibernate, const. overloading
+    public City(int id, String name, String countryCode, String district, int population) {
         this.id = id;
         this.name = name;
         this.countryCode = countryCode;
         this.district = district;
         this.population = population;
     }
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "name")
+    private String name; // mobile applications, Angular, swing can be categorized as UI layer
+    @Column(name = "country_code")
+    private String countryCode;
+    @Column(name = "district")
+    private String district;
+    @Column(name = "population")
+    private int population;
+
 
     public int getId() {
         return id;
@@ -59,11 +60,11 @@ public class City {
         this.district = district;
     }
 
-    public String getPopulation() {
+    public int getPopulation() {
         return population;
     }
 
-    public void setPopulation(String population) {
+    public void setPopulation(int population) {
         this.population = population;
     }
 }
